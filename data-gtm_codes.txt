@@ -1,0 +1,8 @@
+data-gtm-nav
+data-gtm-cta
+data-gtm-content  
+data-gtm-download
+data-gtm-ecom
+data-gtm-share
+data-gtm-register
+data-gtm-subscribe
