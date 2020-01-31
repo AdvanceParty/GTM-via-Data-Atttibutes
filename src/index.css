@@ -94,3 +94,9 @@ nav ul li {
 nav ul li:first-child {
   margin-left: 0;
 }
+
+.spanner {
+  text-decoration: none;
+  padding: inherit 5px;
+  background-color: lawngreen;
+}

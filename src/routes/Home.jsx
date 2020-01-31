@@ -1,12 +1,12 @@
 import React from 'react';
-import Nav from '../Nav';
+// import Nav from '../Nav';
 
 function Home() {
   return (
     <React.Fragment>
-      <article>
+      <article data-gtm-content='article'>
         <header>
-          <h1 data-gtm-article>First Article</h1>
+          <h1 data-gtm-content='title'>First Article</h1>
         </header>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum aut
@@ -20,13 +20,13 @@ function Home() {
           ullam non! Quos, autem odit error aliquam reiciendis reprehenderit
           quidem rem distinctio. Fuga, hic.
         </p>
-        <div data-gtm-cta='buy'>
-          <button>Buy Our Stuff</button>
+        <div>
+          <button data-gtm-cta='buy'>Buy Our Stuff</button>
         </div>
       </article>
-      <article>
+      <article data-gtm-content='article'>
         <header>
-          <h1 data-gtm-article>Second Article</h1>
+          <h1 data-gtm-content='title'>Second Article</h1>
         </header>
         <p>
           Amet consectetur adipisicing elit. Ipsum aut doloremque non, provident
@@ -44,11 +44,11 @@ function Home() {
           Harum earum expedita deserunt, aperiam ducimus provident incidunt
           autem consectetur, aliquam dolorem soluta?
         </p>
-        <button data-gtm-cta='buy'>BUY OUR STUFF!!!!</button>
+        <button data-gtm-cta='buy-shouty'>BUY OUR STUFF!!!!</button>
       </article>
-      <article>
+      <article data-gtm-content='article'>
         <header>
-          <h1 data-gtm-article>Third Article</h1>
+          <h1 data-gtm-content='title'>Third Article</h1>
         </header>
         <p>
           Amet consectetur adipisicing elit. Ipsum aut doloremque non, provident
@@ -67,15 +67,15 @@ function Home() {
           autem consectetur, aliquam dolorem soluta?
         </p>
         <button data-gtm-cta='buy'>Buy This Product</button>
-        <button data-gtm-register='new-features'>
+        <button data-gtm-subscribe='notify-new-features'>
           Get updates when we add new features
         </button>
       </article>
       <section className='callout'>
         <section>
           <h3>Dig It? Dig This!</h3>
-          <button data-gtm-register>Register wit' us</button>
-          <button data-gtm-subscribe='main list'>
+          <button data-gtm-account='register'>Create an account</button>
+          <button data-gtm-subscribe='main-list'>
             Subscribe to our mailing list
           </button>
         </section>
@@ -92,7 +92,7 @@ function Home() {
           <h4>Holy Fact Sheet, Batman!</h4>
           <p>
             Need more info?{' '}
-            <a href='#' data-gtm-download='factsheet'>
+            <a href='#App' data-gtm-download='factsheet'>
               Download
             </a>{' '}
             a fact sheet and be the coolest kid in town.
@@ -102,7 +102,7 @@ function Home() {
         <section>
           <h4>Spend! Spend! Spend!</h4>
           <p>Visit our HiTek ECommerce Shopping Palace.</p>
-          <button data-gtm-ecomm='enter-store'>Let's go Shopping</button>
+          <button data-gtm-cta='enter-store'>Let's go Shopping</button>
         </section>
       </section>
     </React.Fragment>

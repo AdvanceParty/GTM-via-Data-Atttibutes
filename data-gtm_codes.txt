@@ -1,8 +1,32 @@
-data-gtm-nav
+data-[prefix]-[category]="[value]"
+
+data-gtm-account
 data-gtm-cta
-data-gtm-content  
 data-gtm-download
-data-gtm-ecom
+data-gtm-nav
 data-gtm-share
-data-gtm-register
 data-gtm-subscribe
+
+data-gtm-content
+data-gtm-shop
+data-gtm-ad
+
+<nav data-gtm-nav="figgle">
+    ...
+    li> 1
+    li> 2
+    li> 3
+    ...
+</nav>
+
+Trackable -> settings
+- att = data
+- prefix = gtm
+
+<Trackable type="download" value="userManual">
+    <nav>
+        ...
+    </nav>
+</Trackable>
+
+<div data-gtm-download="userManual">

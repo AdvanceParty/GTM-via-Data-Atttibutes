@@ -1,8 +1,10 @@
 import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
 import Home from './routes/Home';
-import withTrackingData from './components/TrackingData';
-import Nav from './Nav';
+import About from './routes/About';
+import AboutWorld from './routes/AboutWorld';
+// import withTrackingData from './components/TrackingData';
+// import Nav from './Nav';
 
 function App() {
   return (
@@ -12,31 +14,29 @@ function App() {
         <nav data-gtm-nav='primary'>
           <ul>
             <li>
-              <a href='/'>Nav 1</a>
+              <Link to='/'>Home</Link>
             </li>
             <li>
-              <a href='#App'>Nav 2</a>
+              <Link to='/about'>About</Link>
             </li>
             <li>
-              <a href='#App'>Nav 3</a>
+              <Link to='/about#anchored'>About#anchored</Link>
             </li>
             <li>
-              <a href='#App'>Nav 4</a>
+              <Link to='/about/world'>About The World</Link>
             </li>
             <li>
-              <a href='#App'>Nav 5</a>
-            </li>
-            <li>
-              <a href='#App'>Nav 6</a>
+              <a href='/decoy.html'>Decoy Page!</a>
             </li>
           </ul>
         </nav>
-
-        <nav1></nav1>
       </header>
 
       <Switch>
         <Route path='/' component={Home} exact />
+        <Route path='/home' component={Home} exact />
+        <Route path='/about' component={About} exact />
+        <Route path='/about/world' component={AboutWorld} exact />
       </Switch>
 
       <footer>
