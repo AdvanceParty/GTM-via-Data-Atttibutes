@@ -20,9 +20,6 @@ function App() {
               <Link to='/about'>About</Link>
             </li>
             <li>
-              <Link to='/about#anchored'>About#anchored</Link>
-            </li>
-            <li>
               <Link to='/about/world'>About The World</Link>
             </li>
             <li>

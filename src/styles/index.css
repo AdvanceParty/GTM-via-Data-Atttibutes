@@ -1,0 +1,109 @@
+/* 
+  Base typographic styles are set in the "typography-baseline.css" node module.
+  Most of the default size/font/color settings can be overridden by setting
+  new css custom props at the html scope.
+  
+  See: https://github.com/paceaux/typography-baseline#readme
+
+*/
+
+html {
+  font-size: 1px;
+}
+
+body {
+  font-size: 15rem;
+  --panel-padding-v: 3em;
+  --panel-padding-h: 2.5em;
+  --panel-padding: var(--panel-padding-v) var(--panel-padding-h);
+  /* --baseFontFamily: Georgia, 'Times New Roman', serif;
+  --titleFontFamily: Helvetica, Arial, sans-serif;
+  --codeFontFamily: monospace; */
+}
+
+/*************************/
+/*         Header        */
+/*************************/
+main > header {
+  background-color: #333;
+  color: #fff;
+  padding: var(--panel-padding);
+}
+
+/*************************/
+/*        Articles       */
+/*************************/
+
+article {
+  padding: var(--panel-padding);
+  display: grid;
+  grid-column-gap: 2em;
+  grid-template-areas:
+    'image'
+    'header'
+    'body'
+    'children';
+  grid-template-columns: 1fr;
+  margin-bottom: 3em;
+}
+
+@media only screen and (min-width: 768px) {
+  article {
+    grid-template-areas:
+      'header header'
+      'body image'
+      'children image';
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+article img {
+  display: block;
+  width: 100%;
+}
+
+article .body {
+  grid-area: body;
+  padding-bottom: 3em;
+}
+article .children {
+  grid-area: children;
+}
+
+article header {
+  grid-area: header;
+}
+
+article figure {
+  grid-area: image;
+}
+
+article figcaption {
+  font-style: italic;
+  text-align: right;
+  font-size: 0.85em;
+}
+
+/*************************/
+/*        Callout        */
+/*************************/
+
+.callout {
+  padding: var(--panel-padding);
+  margin: 5em 0;
+  background-color: #dedede;
+}
+
+.callout section {
+  margin-bottom: 2em;
+}
+
+/*************************/
+/*         Footer        */
+/*************************/
+
+main > footer {
+  padding: var(--panel-padding);
+  padding-top: calc(var(--panel-padding-v) * 0.25);
+  padding-bottom: calc(var(--panel-padding-v) * 4);
+}

@@ -1,9 +1,9 @@
 data-[prefix]-[category]="[value]"
 
-data-gtm-account
-data-gtm-cta
-data-gtm-download
 data-gtm-nav
+data-gtm-cta
+data-gtm-io
+data-gtm-user
 data-gtm-share
 data-gtm-subscribe
 

@@ -1,76 +1,19 @@
 import React from 'react';
-// import Nav from '../Nav';
+import ArticleView from '../components/ArticleView';
+import ArticleModel from '../models/ArticleModel';
+const articles = require('../articles/articles.json');
 
 function Home() {
+  console.log(articles[0]);
   return (
     <React.Fragment>
-      <article data-gtm-content='article'>
-        <header>
-          <h1 data-gtm-content='title'>First Article</h1>
-        </header>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum aut
-          doloremque non, provident ipsam eaque, libero sequi voluptatem
-          mollitia ducimus iste a ea, odio quas asperiores quis quia veniam
-          sunt?
-        </p>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit
-          temporibus exercitationem corrupti illo suscipit aliquam accusantium
-          ullam non! Quos, autem odit error aliquam reiciendis reprehenderit
-          quidem rem distinctio. Fuga, hic.
-        </p>
-        <div>
-          <button data-gtm-cta='buy'>Buy Our Stuff</button>
-        </div>
-      </article>
-      <article data-gtm-content='article'>
-        <header>
-          <h1 data-gtm-content='title'>Second Article</h1>
-        </header>
-        <p>
-          Amet consectetur adipisicing elit. Ipsum aut doloremque non, provident
-          ipsam eaque, libero sequi voluptatem mollitia ducimus iste a ea, odio
-          quas asperiores quis quia veniam sunt?
-        </p>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit
-          temporibus exercitationem corrupti illo suscipit aliquam accusantium
-          ullam non!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-          consequatur enim nemo corporis asperiores rem. Excepturi, aliquam!
-          Harum earum expedita deserunt, aperiam ducimus provident incidunt
-          autem consectetur, aliquam dolorem soluta?
-        </p>
-        <button data-gtm-cta='buy-shouty'>BUY OUR STUFF!!!!</button>
-      </article>
-      <article data-gtm-content='article'>
-        <header>
-          <h1 data-gtm-content='title'>Third Article</h1>
-        </header>
-        <p>
-          Amet consectetur adipisicing elit. Ipsum aut doloremque non, provident
-          ipsam eaque, libero sequi voluptatem mollitia ducimus iste a ea, odio
-          quas asperiores quis quia veniam sunt?
-        </p>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit
-          temporibus exercitationem corrupti illo suscipit aliquam accusantium
-          ullam non!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-          consequatur enim nemo corporis asperiores rem. Excepturi, aliquam!
-          Harum earum expedita deserunt, aperiam ducimus provident incidunt
-          autem consectetur, aliquam dolorem soluta?
-        </p>
-        <button data-gtm-cta='buy'>Buy This Product</button>
-        <button data-gtm-subscribe='notify-new-features'>
-          Get updates when we add new features
-        </button>
-      </article>
+      <ArticleView content={new ArticleModel(articles[0])}>
+        <button data-gtm-cta='buy'>Buy Our Stuff</button>
+      </ArticleView>
+      <ArticleView content={new ArticleModel(articles[1])}>
+        <button data-gtm-cta='buy-hype'>BUY OUR RAD STUFF!!</button>
+      </ArticleView>
+      <ArticleView content={new ArticleModel(articles[2])} />>
       <section className='callout'>
         <section>
           <h3>Dig It? Dig This!</h3>

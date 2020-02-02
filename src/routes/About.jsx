@@ -4,7 +4,9 @@ function About() {
   return (
     <React.Fragment>
       <article>
-        <h2 data-gtm-content='title'>First Article</h2>
+        <header>
+          <h2 data-gtm-content='title'>First Article</h2>
+        </header>
         <p>This is an about page. Cool, hey. Let's look at some links.</p>
         <ul>
           <li>
@@ -23,6 +25,9 @@ function About() {
         </ul>
       </article>
       <article>
+        <header>
+          <h1>Important news!</h1>
+        </header>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed qui sunt
           quia error, nisi soluta reiciendis est possimus iusto! Voluptate quis
@@ -93,20 +98,24 @@ function About() {
         </p>
       </article>
       <article>
-        <h2 id='anchored'>This heading has an anchor on it</h2>
-        <p>So you jump right to it, bruv.</p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum
-          nesciunt nisi provident voluptas recusandae veniam dignissimos fuga
-          eum vel, non veritatis, at explicabo quisquam impedit maxime. Sed
-          minima rem nisi!
-        </p>
-        <p>
-          Itaque, laudantium! Quae veniam explicabo perspiciatis quaerat vero
-          laborum doloribus fuga recusandae rem, soluta reprehenderit laboriosam
-          perferendis vel cumque sit accusamus ducimus dolore dignissimos
-          similique. Debitis, autem blanditiis. Repellendus, est!
-        </p>
+        <header>
+          <h2 id='anchored'>This heading has an anchor on it</h2>
+        </header>
+        <section>
+          <p>So you jump right to it, bruv.</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum
+            nesciunt nisi provident voluptas recusandae veniam dignissimos fuga
+            eum vel, non veritatis, at explicabo quisquam impedit maxime. Sed
+            minima rem nisi!
+          </p>
+          <p>
+            Itaque, laudantium! Quae veniam explicabo perspiciatis quaerat vero
+            laborum doloribus fuga recusandae rem, soluta reprehenderit
+            laboriosam perferendis vel cumque sit accusamus ducimus dolore
+            dignissimos similique. Debitis, autem blanditiis. Repellendus, est!
+          </p>
+        </section>
       </article>
     </React.Fragment>
   );
