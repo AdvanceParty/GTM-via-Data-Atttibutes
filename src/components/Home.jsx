@@ -3,9 +3,7 @@ import React from 'react';
 function Home() {
   return (
     <React.Fragment>
-      <header>
-        <h2 data-gtm-content='title'>Home</h2>
-      </header>
+      <h2 data-gtm-content='title'>Home</h2>
       <section className='callout'>
         <section>
           <h3>Dig It? Dig This!</h3>
@@ -27,7 +25,7 @@ function Home() {
           <h4>Holy Fact Sheet, Batman!</h4>
           <p>
             Need more info?{' '}
-            <a href='#App' data-gtm-download='factsheet'>
+            <a href='./' data-gtm-download='factsheet'>
               Download
             </a>{' '}
             a fact sheet and be the coolest kid in town.

@@ -36,7 +36,7 @@ function App() {
         <Route
           path='/news/:pageNum'
           render={props => (
-            <News {...props} articleData={getPageArticles(pageNum)} />
+            <News {...props} articles={getPageArticles(pageNum)} />
           )}
           exact
         />
