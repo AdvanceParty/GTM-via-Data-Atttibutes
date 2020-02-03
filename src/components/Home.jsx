@@ -1,6 +1,10 @@
 import React from 'react';
 
 function Home() {
+  const shareSocial = platform => {
+    console.log(`Share on ${platform}`);
+  };
+
   return (
     <React.Fragment>
       <h2 data-gtm-content='title'>Home</h2>
@@ -13,22 +17,25 @@ function Home() {
           </button>
         </section>
 
-        <section>
+        <section data-gtm-social>
           <h4>Sharing is caring!</h4>
           <p>Tell your buds</p>
-          <button data-gtm-share='facebook'>Facebook</button>
-          <button data-gtm-share='twitter'>Twitter</button>
-          <button data-gtm-share='geocities'>Geocities</button>
+          <button title='Facebook'>Facebook</button>
+          <button title='Twitter'>Twitter</button>
+          <button title='Geocities'>Geocities</button>
         </section>
 
-        <section>
+        <section data-gtm-cta='downloads'>
           <h4>Holy Fact Sheet, Batman!</h4>
           <p>
             Need more info?{' '}
-            <a href='./' data-gtm-download='factsheet'>
-              Download
-            </a>{' '}
-            a fact sheet and be the coolest kid in town.
+            <a href='downloads/FactSheet.pdf'>read the FactSheet</a> and be the
+            coolest kid in town.
+          </p>
+          <p>
+            Or, if you prefer takeaways,{' '}
+            <a href='downloads/FactSheet.zip'>download a zipped version</a> for
+            keepsies.
           </p>
         </section>
 
