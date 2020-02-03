@@ -1,10 +1,6 @@
 import React from 'react';
 
 function Home() {
-  const shareSocial = platform => {
-    console.log(`Share on ${platform}`);
-  };
-
   return (
     <React.Fragment>
       <h2 data-gtm-content='title'>Home</h2>
@@ -17,7 +13,7 @@ function Home() {
           </button>
         </section>
 
-        <section data-gtm-social>
+        <section data-gtm-social='share'>
           <h4>Sharing is caring!</h4>
           <p>Tell your buds</p>
           <button title='Facebook'>Facebook</button>
@@ -42,6 +38,9 @@ function Home() {
         <section>
           <h4>Spend! Spend! Spend!</h4>
           <p>Visit our HiTek ECommerce Shopping Palace.</p>
+          <p>
+            <a href='#top'>This should be an untagged internal page link.</a>
+          </p>
           <button data-gtm-cta='enter-store'>Let's go Shopping</button>
         </section>
       </section>
