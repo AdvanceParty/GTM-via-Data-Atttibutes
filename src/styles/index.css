@@ -39,8 +39,8 @@ article {
   display: grid;
   grid-column-gap: 2em;
   grid-template-areas:
-    'image'
     'header'
+    'image'
     'body'
     'children';
   grid-template-columns: 1fr;

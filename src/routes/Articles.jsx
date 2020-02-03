@@ -1,19 +1,21 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import ArticleView from '../components/ArticleView';
 import ArticleModel from '../models/ArticleModel';
-const articles = require('../articles/articles.json');
+// const articles = require('../articles/articles.json');
 
-function Home() {
-  console.log(articles[0]);
+function Articles({ articleData }) {
+  const pageNum = Number(useParams().pageNum) || 0;
+  console.log(`pageNum: ${pageNum}`);
+
+  const articleTags = articleData.map((article, index) => (
+    <ArticleView key={index} content={new ArticleModel(article)} />
+  ));
+
   return (
     <React.Fragment>
-      <ArticleView content={new ArticleModel(articles[0])}>
-        <button data-gtm-cta='buy'>Buy Our Stuff</button>
-      </ArticleView>
-      <ArticleView content={new ArticleModel(articles[1])}>
-        <button data-gtm-cta='buy-hype'>BUY OUR RAD STUFF!!</button>
-      </ArticleView>
-      <ArticleView content={new ArticleModel(articles[2])} />>
+      {articleTags}
+
       <section className='callout'>
         <section>
           <h3>Dig It? Dig This!</h3>
@@ -52,4 +54,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Articles;

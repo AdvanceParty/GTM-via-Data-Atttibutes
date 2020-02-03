@@ -1,60 +1,43 @@
 import React from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
-import Home from './routes/Home';
-import About from './routes/About';
-import AboutWorld from './routes/AboutWorld';
-// import withTrackingData from './components/TrackingData';
-// import Nav from './Nav';
+import { Route, Switch, useLocation } from 'react-router-dom';
+import Nav from './components/Nav';
+import Articles from './routes/Articles';
+import Footer from './components/Footer';
+
+const articles = require('./articles/articles.json');
+const articlesPerPage = 3;
 
 function App() {
+  const { pathname } = useLocation();
+  const pageNum = Number(pathname.split('/').slice(-1)) || 0;
+
+  const getPageArticles = pageNum => {
+    const from = (pageNum - 1) * articlesPerPage;
+    const to = articlesPerPage;
+
+    console.log(articlesPerPage, pageNum, from, to);
+
+    return articles.splice(from, to);
+  };
+
   return (
     <main id='App'>
       <header>
-        <h1>It's a page Header!</h1>
-        <nav data-gtm-nav='primary'>
-          <ul>
-            <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li>
-              <Link to='/about'>About</Link>
-            </li>
-            <li>
-              <Link to='/about/world'>About The World</Link>
-            </li>
-            <li>
-              <a href='/decoy.html'>Decoy Page!</a>
-            </li>
-          </ul>
-        </nav>
+        <h1>It's a Website!</h1>
+        <Nav />
       </header>
 
       <Switch>
-        <Route path='/' component={Home} exact />
-        <Route path='/home' component={Home} exact />
-        <Route path='/about' component={About} exact />
-        <Route path='/about/world' component={AboutWorld} exact />
+        <Route
+          path='/articles/:pageNum'
+          render={props => (
+            <Articles {...props} articleData={getPageArticles(pageNum)} />
+          )}
+          exact
+        />
       </Switch>
 
-      <footer>
-        <h3>Das Footer</h3>
-        <nav data-gtm-nav='secondary'>
-          <ul>
-            <li>
-              <a href='#App'>Privacy</a>
-            </li>
-            <li>
-              <a href='#App'>Terms & Conditions</a>
-            </li>
-            <li>
-              <a href='#App'>Media</a>
-            </li>
-            <li>
-              <a href='#App'>Disclaimer</a>
-            </li>
-          </ul>
-        </nav>
-      </footer>
+      <Footer />
     </main>
   );
 }
