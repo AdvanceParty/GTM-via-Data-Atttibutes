@@ -5,16 +5,19 @@ function Nav(props) {
     <nav data-gtm-nav='primary'>
       <ul>
         <li>
-          <Link to='/articles/1'>Legit News</Link>
+          <Link to='/'>Home</Link>
         </li>
         <li>
-          <Link to='/articles/2'>True Dinks</Link>
+          <Link to='/news/1'>Legit News</Link>
         </li>
         <li>
-          <Link to='/articles/3'>Fake News</Link>
+          <Link to='/news/2'>True Dinks</Link>
         </li>
         <li>
-          <a href='/decoy.html'>Decoy Page!</a>
+          <Link to='/news/3'>Fake News</Link>
+        </li>
+        <li>
+          <Link to='/news/4'>Pure Bullshit</Link>
         </li>
       </ul>
     </nav>

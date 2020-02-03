@@ -1,23 +1,27 @@
 import React from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
+import TagManager from 'react-gtm-module';
 import Nav from './components/Nav';
-import Articles from './routes/Articles';
+import Home from './components/Home';
 import Footer from './components/Footer';
+import News from './components/News';
 
-const articles = require('./articles/articles.json');
-const articlesPerPage = 3;
+// embed data from json files at build time
+import GTM_CONFIG from './gtm_config.json';
+const articles = require('./content/articles.json');
+
+// setup GTM via react-gtm-module
+const tagManagerArgs = { gtmId: GTM_CONFIG.GTM_ID };
+TagManager.initialize(tagManagerArgs);
 
 function App() {
+  const articlesPerPage = 3;
   const { pathname } = useLocation();
   const pageNum = Number(pathname.split('/').slice(-1)) || 0;
 
   const getPageArticles = pageNum => {
-    const from = (pageNum - 1) * articlesPerPage;
-    const to = articlesPerPage;
-
-    console.log(articlesPerPage, pageNum, from, to);
-
-    return articles.splice(from, to);
+    const first = (pageNum - 1) * articlesPerPage;
+    return articles.slice(first, first + articlesPerPage);
   };
 
   return (
@@ -28,10 +32,11 @@ function App() {
       </header>
 
       <Switch>
+        <Route path='/' component={Home} exact />>
         <Route
-          path='/articles/:pageNum'
+          path='/news/:pageNum'
           render={props => (
-            <Articles {...props} articleData={getPageArticles(pageNum)} />
+            <News {...props} articleData={getPageArticles(pageNum)} />
           )}
           exact
         />
